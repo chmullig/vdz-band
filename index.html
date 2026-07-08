@@ -16,10 +16,10 @@
 
   <link rel="icon" href="data:," />
 
-  <!-- Rye ~= GoDaddy's ornate "Plug NickelBlack" display face -->
+  <!-- interim art-deco title face (Limelight); swap once final font chosen -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet" />
 
   <style>
     /* ---- palette lifted verbatim from vdz.me ---- */
@@ -49,18 +49,19 @@
     /* title + tagline sit in a translucent maroon panel, upper-right (original layout) */
     #ss-about {
       position: absolute;
-      top: 17%;
+      top: 6%;
       right: 40px;
       max-width: 52%;
       text-align: left;
       background: rgba(149, 9, 8, 0.70);
       border-radius: 6px;
       padding: 12px 20px 14px;
+      z-index: 2;
     }
 
     #ss-name {
       margin: 0 0 4px;
-      font-family: "Rye", "Playbill", Tahoma, serif;
+      font-family: "Limelight", "Century Gothic", Tahoma, sans-serif;
       font-weight: 400;
       font-size: 34px;
       letter-spacing: 3px;
@@ -75,20 +76,28 @@
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
     }
 
-    /* the "prestigious .band address" gag line */
-    .upgrade {
+    /* link back to the original site */
+    .orig {
       margin-top: 8px;
       font-size: 12px;
       font-style: italic;
+    }
+    .orig a {
       color: var(--links);
+      text-decoration: none;
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
     }
+    .orig a:hover { text-decoration: underline; }
+
+    /* full-screen easter-egg click layer: above the photo, below the panel/buttons */
+    #photo-egg { position: fixed; inset: 0; z-index: 0; }
 
     /* ---- top-right GoDaddy chrome ---- */
     #owner-login {
       position: absolute;
       top: 8px;
       right: 8px;
+      z-index: 2;
       font-size: 11px;
       font-weight: bold;
       letter-spacing: 1px;
@@ -107,6 +116,7 @@
       right: 8px;
       display: flex;
       gap: 3px;
+      z-index: 2;
     }
     #share a {
       width: 24px;
@@ -137,6 +147,7 @@
       background: rgba(0, 0, 0, 0.45);
       padding: 6px 10px;
       border-radius: 3px;
+      z-index: 2;
     }
     .cross-sell a { color: var(--links); text-decoration: none; }
     .cross-sell a:hover { text-decoration: underline; }
@@ -145,6 +156,7 @@
 
 <body>
   <img id="ss-background" src="band.jpg" alt="background" />
+  <a id="photo-egg" href="IMG_1338.HEIC" aria-label="the scene of the crime"></a>
 
   <a id="owner-login" href="#">Clone Login</a>
   <div id="share">
@@ -158,7 +170,7 @@
   <div id="ss-about">
     <h1 id="ss-name">A stabbing at the clonery</h1>
     <div id="ss-description">The new concept album from Delaware's hottest boyband <em>(all of him)</em></div>
-    <div class="upgrade">now at the prestigious&nbsp;.band&nbsp;address</div>
+    <div class="orig"><a href="http://vdz.me" target="_blank" rel="noopener">as originally seen on vdz.me &#8599;</a></div>
   </div>
 
   <div class="cross-sell">
