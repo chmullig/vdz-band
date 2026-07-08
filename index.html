@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=1024" />
+
+  <title>A stabbing at the cannery</title>
+  <meta name="description" content="Check out this GoDaddy hosted webpage! http://vdz.band." />
+
+  <!-- Open Graph: match the original so shared links look identical -->
+  <meta property="og:title" content="A stabbing at the cannery" />
+  <meta property="og:description" content="The new concept album from Delaware's hottest boyband" />
+  <meta property="og:image" content="https://vdz.band/band.jpg" />
+  <meta property="og:url" content="https://vdz.band/" />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="data:," />
+
+  <!-- Closest freely-available match to GoDaddy's "Plug NickelBlack" heavy display face -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ---- palette lifted verbatim from vdz.me ---- */
+    :root {
+      --page:  #950908; /* dark red page background (shows behind photo) */
+      --title: #EA8B3B; /* orange */
+      --desc:  #44D3D1; /* teal  */
+      --links: #B1CD3C; /* lime  */
+    }
+
+    html, body {
+      margin: 0;
+      height: 100%;
+      background-color: var(--page);
+    }
+
+    /* full-screen fixed cover photo, exactly like the GoDaddy "scaleBackground" */
+    #ss-background {
+      position: fixed;
+      inset: 0;
+      z-index: -1000;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      background-color: var(--page);
+    }
+
+    .page {
+      min-height: 100vh;
+      box-sizing: border-box;
+      padding: 34px 40px;
+    }
+
+    /* text block sits top-left over the photo, same as the original layout */
+    #ss-about {
+      max-width: 640px;
+    }
+
+    #ss-name {
+      margin: 0 0 6px;
+      font-family: "Archivo Black", Tahoma, sans-serif;
+      font-size: 32px;
+      line-height: 1.1;
+      color: var(--title);
+      text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.55);
+    }
+
+    #ss-description {
+      font-family: Tahoma, Geneva, sans-serif;
+      font-size: 16px;
+      color: var(--desc);
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    }
+
+    /* the "prestigious .band address" gag line */
+    .upgrade {
+      margin-top: 10px;
+      font-family: Tahoma, Geneva, sans-serif;
+      font-size: 12px;
+      font-style: italic;
+      color: var(--links);
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    }
+
+    /* faithful homage to the GoDaddy cross-sell footer blurb */
+    .cross-sell {
+      position: fixed;
+      right: 12px;
+      bottom: 12px;
+      font-family: Tahoma, Geneva, sans-serif;
+      font-size: 11px;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.45);
+      padding: 6px 10px;
+      border-radius: 3px;
+    }
+    .cross-sell a { color: var(--links); text-decoration: none; }
+    .cross-sell a:hover { text-decoration: underline; }
+  </style>
+</head>
+
+<body>
+  <img id="ss-background" src="band.jpg" alt="background" />
+
+  <div class="page">
+    <div id="ss-about">
+      <h1 id="ss-name">A stabbing at the cannery</h1>
+      <div id="ss-description">The new concept album from Delaware's hottest boyband</div>
+      <div class="upgrade">now at the prestigious&nbsp;.band&nbsp;address</div>
+    </div>
+  </div>
+
+  <div class="cross-sell">
+    A website created by <a href="https://www.godaddy.com/websites/website-builder" rel="nofollow noopener" target="_blank"><b>Website Builder</b></a>
+  </div>
+</body>
+</html>

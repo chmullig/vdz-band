@@ -1,0 +1,15 @@
+# Only the static site (index.html, band.jpg, CNAME) belongs in the Pages repo.
+.venv/
+tools/
+work/
+previews/
+sources/
+for_photoshop/
+*.psd
+*.HEIC
+*.heic
+Gemini_*.png
+vdz-masterpiece*.jpg
+band.placeholder-original.jpg
+facing away*
+.DS_Store
