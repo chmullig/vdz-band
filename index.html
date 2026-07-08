@@ -9,7 +9,7 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="A stabbing at the clonery" />
-  <meta property="og:description" content="The new concept album from Delaware's hottest boyband (all of him)" />
+  <meta property="og:description" content="The new concept album from Delaware's highest correlation boyband" />
   <meta property="og:image" content="https://vdz.band/band.jpg" />
   <meta property="og:url" content="https://vdz.band/" />
   <meta property="og:type" content="website" />
@@ -76,19 +76,6 @@
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
     }
 
-    /* link back to the original site */
-    .orig {
-      margin-top: 8px;
-      font-size: 12px;
-      font-style: italic;
-    }
-    .orig a {
-      color: var(--links);
-      text-decoration: none;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
-    }
-    .orig a:hover { text-decoration: underline; }
-
     /* full-screen easter-egg click layer: above the photo, below the panel/buttons */
     #photo-egg { position: fixed; inset: 0; z-index: 0; }
 
@@ -118,24 +105,19 @@
       gap: 3px;
       z-index: 2;
     }
-    #share a {
+    #share span {
       width: 24px;
       height: 24px;
       border-radius: 4px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: bold;
-      font-size: 13px;
+      background: var(--desc); /* teal */
       color: #fff;
-      text-decoration: none;
+      font-weight: bold;
+      font-size: 15px;
       font-family: Georgia, "Times New Roman", serif;
     }
-    .s-fb { background: #3b5998; }
-    .s-tw { background: #111; }
-    .s-ms { background: #000066; }
-    .s-de { background: #3274c9; }
-    .s-su { background: #eb4924; }
 
     /* GoDaddy cross-sell blurb, bottom-right */
     .cross-sell {
@@ -149,32 +131,29 @@
       border-radius: 3px;
       z-index: 2;
     }
-    .cross-sell a { color: var(--links); text-decoration: none; }
+    .cross-sell a { color: inherit; text-decoration: none; }
     .cross-sell a:hover { text-decoration: underline; }
   </style>
 </head>
 
 <body>
   <img id="ss-background" src="band.jpg" alt="background" />
-  <a id="photo-egg" href="IMG_1338.HEIC" aria-label="the scene of the crime"></a>
+  <a id="photo-egg" href="egg.html" aria-label="the scene of the crime"></a>
 
   <a id="owner-login" href="#">Clone Login</a>
-  <div id="share">
-    <a class="s-fb" href="#" title="Share on Facebook">f</a>
-    <a class="s-tw" href="#" title="Share">&#120143;</a>
-    <a class="s-ms" href="#" title="MySpace">m</a>
-    <a class="s-de" href="#" title="del.icio.us">d</a>
-    <a class="s-su" href="#" title="StumbleUpon">su</a>
+  <div id="share" title="a couple of sigmas">
+    <span>&sigma;</span>
+    <span>&sigma;</span>
   </div>
 
   <div id="ss-about">
     <h1 id="ss-name">A stabbing at the clonery</h1>
-    <div id="ss-description">The new concept album from Delaware's hottest boyband <em>(all of him)</em></div>
-    <div class="orig"><a href="http://vdz.me" target="_blank" rel="noopener">as originally seen on vdz.me &#8599;</a></div>
+    <div id="ss-description">The new concept album from Delaware's highest correlation boyband</div>
   </div>
 
   <div class="cross-sell">
-    A website created by <b>CloneDaddy</b> Website Builder
+    <a href="http://vdz.me" target="_blank" rel="noopener">A website created by <b>CloneDaddy</b> Website Builder</a>
   </div>
+
 </body>
 </html>
