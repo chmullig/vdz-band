@@ -4,22 +4,22 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=1024" />
 
-  <title>A stabbing at the cannery</title>
-  <meta name="description" content="Check out this GoDaddy hosted webpage! http://vdz.band." />
+  <title>A stabbing at the clonery</title>
+  <meta name="description" content="Check out this CloneDaddy hosted webpage! http://vdz.band." />
 
-  <!-- Open Graph: match the original so shared links look identical -->
-  <meta property="og:title" content="A stabbing at the cannery" />
-  <meta property="og:description" content="The new concept album from Delaware's hottest boyband" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="A stabbing at the clonery" />
+  <meta property="og:description" content="The new concept album from Delaware's hottest boyband (all of him)" />
   <meta property="og:image" content="https://vdz.band/band.jpg" />
   <meta property="og:url" content="https://vdz.band/" />
   <meta property="og:type" content="website" />
 
   <link rel="icon" href="data:," />
 
-  <!-- Closest freely-available match to GoDaddy's "Plug NickelBlack" heavy display face -->
+  <!-- Rye ~= GoDaddy's ornate "Plug NickelBlack" display face -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet" />
 
   <style>
     /* ---- palette lifted verbatim from vdz.me ---- */
@@ -32,12 +32,9 @@
 
     /* fallback colour lives on html, BEHIND the image (shows only if it fails) */
     html { background-color: var(--page); }
-    html, body {
-      margin: 0;
-      height: 100%;
-    }
+    html, body { margin: 0; height: 100%; font-family: Tahoma, Geneva, sans-serif; }
 
-    /* full-screen fixed cover photo, exactly like the GoDaddy "scaleBackground" */
+    /* full-screen fixed cover photo, like the GoDaddy "scaleBackground" */
     #ss-background {
       position: fixed;
       inset: 0;
@@ -49,28 +46,30 @@
       background-color: var(--page);
     }
 
-    .page {
-      min-height: 100vh;
-      box-sizing: border-box;
-      padding: 34px 40px;
-    }
-
-    /* text block sits top-left over the photo, same as the original layout */
+    /* title + tagline sit in a translucent maroon panel, upper-right (original layout) */
     #ss-about {
-      max-width: 640px;
+      position: absolute;
+      top: 17%;
+      right: 40px;
+      max-width: 52%;
+      text-align: left;
+      background: rgba(149, 9, 8, 0.70);
+      border-radius: 6px;
+      padding: 12px 20px 14px;
     }
 
     #ss-name {
-      margin: 0 0 6px;
-      font-family: "Archivo Black", Tahoma, sans-serif;
-      font-size: 32px;
-      line-height: 1.1;
+      margin: 0 0 4px;
+      font-family: "Rye", "Playbill", Tahoma, serif;
+      font-weight: 400;
+      font-size: 34px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
       color: var(--title);
       text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.55);
     }
 
     #ss-description {
-      font-family: Tahoma, Geneva, sans-serif;
       font-size: 16px;
       color: var(--desc);
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
@@ -78,20 +77,61 @@
 
     /* the "prestigious .band address" gag line */
     .upgrade {
-      margin-top: 10px;
-      font-family: Tahoma, Geneva, sans-serif;
+      margin-top: 8px;
       font-size: 12px;
       font-style: italic;
       color: var(--links);
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
     }
 
-    /* faithful homage to the GoDaddy cross-sell footer blurb */
+    /* ---- top-right GoDaddy chrome ---- */
+    #owner-login {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: #333;
+      background: linear-gradient(#f4f4f4, #d8d8d8);
+      border: 1px solid #999;
+      border-radius: 3px;
+      padding: 4px 10px;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    #share {
+      position: absolute;
+      top: 34px;
+      right: 8px;
+      display: flex;
+      gap: 3px;
+    }
+    #share a {
+      width: 24px;
+      height: 24px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 13px;
+      color: #fff;
+      text-decoration: none;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+    .s-fb { background: #3b5998; }
+    .s-tw { background: #111; }
+    .s-ms { background: #000066; }
+    .s-de { background: #3274c9; }
+    .s-su { background: #eb4924; }
+
+    /* GoDaddy cross-sell blurb, bottom-right */
     .cross-sell {
       position: fixed;
       right: 12px;
       bottom: 12px;
-      font-family: Tahoma, Geneva, sans-serif;
       font-size: 11px;
       color: #fff;
       background: rgba(0, 0, 0, 0.45);
@@ -106,16 +146,23 @@
 <body>
   <img id="ss-background" src="band.jpg" alt="background" />
 
-  <div class="page">
-    <div id="ss-about">
-      <h1 id="ss-name">A stabbing at the cannery</h1>
-      <div id="ss-description">The new concept album from Delaware's hottest boyband</div>
-      <div class="upgrade">now at the prestigious&nbsp;.band&nbsp;address</div>
-    </div>
+  <a id="owner-login" href="#">Clone Login</a>
+  <div id="share">
+    <a class="s-fb" href="#" title="Share on Facebook">f</a>
+    <a class="s-tw" href="#" title="Share">&#120143;</a>
+    <a class="s-ms" href="#" title="MySpace">m</a>
+    <a class="s-de" href="#" title="del.icio.us">d</a>
+    <a class="s-su" href="#" title="StumbleUpon">su</a>
+  </div>
+
+  <div id="ss-about">
+    <h1 id="ss-name">A stabbing at the clonery</h1>
+    <div id="ss-description">The new concept album from Delaware's hottest boyband <em>(all of him)</em></div>
+    <div class="upgrade">now at the prestigious&nbsp;.band&nbsp;address</div>
   </div>
 
   <div class="cross-sell">
-    A website created by <a href="https://www.godaddy.com/websites/website-builder" rel="nofollow noopener" target="_blank"><b>Website Builder</b></a>
+    A website created by <b>CloneDaddy</b> Website Builder
   </div>
 </body>
 </html>
