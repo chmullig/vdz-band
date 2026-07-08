@@ -30,17 +30,18 @@
       --links: #B1CD3C; /* lime  */
     }
 
+    /* fallback colour lives on html, BEHIND the image (shows only if it fails) */
+    html { background-color: var(--page); }
     html, body {
       margin: 0;
       height: 100%;
-      background-color: var(--page);
     }
 
     /* full-screen fixed cover photo, exactly like the GoDaddy "scaleBackground" */
     #ss-background {
       position: fixed;
       inset: 0;
-      z-index: -1000;
+      z-index: -1;
       width: 100%;
       height: 100%;
       object-fit: cover;
